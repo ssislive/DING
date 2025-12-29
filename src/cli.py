@@ -1,17 +1,23 @@
-import sys
-from src.data import init
+import argparse
+from src import data
+
+def init(args):
+    data.init()
+
+def parse_args():
+    parser= argparse.ArgumentParser(prog="ding")
+
+    commands= parser.add_subparsers(dest="command", required=True)
+
+    init_parser = commands.add_parser("init")
+    init_parser.set_defaults(func=init)
+
+    return parser.parse_args()
+
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: ding <command>")
-        return
+    print("Ding Dong, who's there \nThe IRS \nOh Shit")
 
-    if sys.argv[1] == "init":
-        # ding init
-        if len(sys.argv) == 2:
-            init()
-        # ding init <path>
-        elif len(sys.argv) == 3:
-            init(sys.argv[2])
-        else:
-            print("Usage: ding init [path]")
+
+if __name__ == "__main__":
+    main()
