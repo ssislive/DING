@@ -1,14 +1,14 @@
 import os
-
-DING_DIR = ".ding"
+ 
+Ding_dir = ".ding"
 
 def init():
     cwd = os.getcwd()
-    ding_path = os.path.join(cwd, DING_DIR)
+    ding_path = os.path.join(cwd, Ding_dir)
 
     if os.path.exists(ding_path):
-        print("It is a ding repository")
+        print("It is already a ding repository")
         return
 
     os.mkdir(ding_path)
-    print(f"Initialised an empty ding repository in {ding_path}")
+    print(f"Initialisied a ding repo in {ding_path}")
