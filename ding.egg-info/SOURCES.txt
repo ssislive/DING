@@ -7,3 +7,4 @@ ding.egg-info/entry_points.txt
 ding.egg-info/top_level.txt
 src/base.py
 src/cli.py
+src/data.py
